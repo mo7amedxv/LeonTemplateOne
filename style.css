@@ -555,3 +555,4 @@ footer span {
   font-weight: bold;
   color: var(--main-color);
 }
+@media (max-width:768px) {.dark{font-size:25px}.green{font-size:20px}}
