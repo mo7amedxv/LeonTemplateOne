@@ -385,26 +385,173 @@ h1 {
   margin-bottom: 10px;
 }
 /* about */
-/*<section class="about" id="about">
-<div class="special-text">
-<h2>About</h2>
-<p>Less is more work</p>
-</div>
-<div class="about-content">
-<div class="about-photo">
-<img src="assests/Help/assets/about.jpg" alt="">
-</div>
-<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nemo neque voluptate tempora velit cum non, fuga vitae architecto delectus sed maxime rerum impedit aliquam obcaecati, aut excepturi iusto laudantium!</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sapiente. Velit iure exercitationem dolores nesciunt dolore. Eum officiis dolorum hic voluptate quaerat minima, similique inventore esse, alias, sed quo officia?</p>
-</div>
-</section> */
+/*   <section class="about-container">
+        <section class="about" id="about">
+            <div class="special-text">
+        <h2>About</h2>
+        <p>Less is more work</p>
+      </div>
+      <div class="about-content">
+        <div class="about-photo">
+          <img src="assests/Help/assets/about.jpg" alt="">
+        </div>
+        <div class="about-text">
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nemo neque voluptate tempora velit cum non, fuga vitae architecto delectus sed maxime rerum impedit aliquam obcaecati, aut excepturi iusto laudantium!</h3>
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sapiente. Velit iure exercitationem dolores nesciunt dolore. Eum officiis dolorum hic voluptate quaerat minima, similique inventore esse, alias, sed quo officia?</p>
+      </div></div>
+        </section>
+      </section> */
 .about-container {
   padding: var(--section-padding) 0;
 }
 .about-content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  gap: 2rem;
+  margin-top: 100px;
+  padding: 0 20px;
 }
 .about-text {
   display: grid;
+  max-width: 600px;
+}
+
+.about-photo img {
+  position: relative;
+  width: 250px;
+  height: 375px;
+}
+.about-photo {
+  position: relative;
+}
+.about-photo::before {
+  content: "";
+  position: absolute;
+  background-color: #ebeced;
+  width: 100px;
+  height: calc(100% + 80px);
+  top: -40px;
+  left: -20px;
+  z-index: -1;
+}
+.about-photo::after {
+  top: -40px;
+  content: "";
+  position: absolute;
+  width: 185px;
+  height: 386px;
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  z-index: -1;
+  right: -124px;
+}
+.about-content h3 {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+
+.about-content p {
+  line-height: 2;
+  color: #777;
+}
+
+hr {
+  width: 50%;
+  display: inline-block;
+  border-color: var(--main-color);
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .about-content {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    gap: 2rem;
+    position: relative;
+    text-align: center;
+  }
+  .about-photo::after,
+  .about-photo::before {
+    display: none;
+  }
+  hr {
+    width: 50%;
+    margin: 30px auto;
+    border-color: var(--main-color);
+  }
+  .about-content h3 {
+    margin-bottom: 10px;
+  }
+}
+/* Contact */
+.contact-container {
+  padding: var(--section-padding) 0;
+  background-color: var(--section-background);
+}
+
+.contact-text {
+  padding-top: var(--section-padding);
+}
+.contact-content {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.dark {
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  letter-spacing: -2px;
+
+  padding: 20px 0 0 0;
+  line-height: 1.5;
+}
+.green {
+  display: block;
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-decoration: none;
+  line-height: 1.5;
+}
+.links {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: var(--section-padding);
+}
+.links img {
+  color: var(--secondary-color);
+  width: 15px;
+  height: 15px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.links-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links p {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+/* footer */
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+}
+footer span {
+  font-weight: bold;
+  color: var(--main-color);
 }
