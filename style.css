@@ -91,6 +91,7 @@ button {
   --small-space: clamp(1rem, 1.1rem, 1.3rem);
   --small-gap: 1rem;
   --x-small-gap: 0.5rem;
+  --mobile-gap: 1.5rem;
 }
 /* untilities */
 .features-container,
@@ -184,11 +185,6 @@ header img {
   transition: all 0.3s ease;
 }
 
-.hamburger span:nth-child(2) {
-  width: 50%;
-  align-self: flex-end;
-}
-
 #menu-toggle:checked + .hamburger span:nth-child(2) {
   width: 100%;
 }
@@ -234,6 +230,20 @@ header img {
   max-height: 500px; /* enough to show all links */
 }
 
+.hamburger span {
+  transform-origin: center;
+}
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
 /* Hero Section */
 .hero {
   min-height: calc(100svh - 63px);
@@ -354,7 +364,7 @@ header img {
   .features,
   .services-content,
   .portfolio-content {
-    gap: var(--space-gap);
+    gap: var(--mobile-gap);
   }
 }
 
@@ -547,4 +557,3 @@ footer span {
   color: var(--main-color);
   font-weight: 900;
 }
-
