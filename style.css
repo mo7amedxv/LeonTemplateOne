@@ -168,53 +168,30 @@ header img {
   width: 70px;
 }
 
-/* Hamburger */
-#menu-toggle {
-  display: none;
-}
-
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.hamburger span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Menu */
+/* Base menu styles for desktop */
 .menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: var(--clr-white);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  box-shadow: var(--shadow-soft);
+  display: flex;
+  position: static;
+  width: auto;
+  background-color: transparent;
+  max-height: none;
+  overflow: visible;
+  box-shadow: none;
 }
 
 .menu ul {
-  list-style: none;
-  padding: 0;
+  display: flex;
+  gap: var(--small-gap);
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .menu ul li {
-  border-bottom: 1px solid var(--clr-border-light);
-  padding: var(--small-space);
+  border: none;
+  padding: 0;
   transition: background 0.3s ease;
+  border-radius: 25px;
 }
 
 .menu ul li a {
@@ -222,31 +199,84 @@ header img {
   color: var(--clr-text-dark);
   text-decoration: none;
   text-align: center;
+  padding: var(--x-small-gap);
 }
 
 .menu ul li:hover {
   background-color: var(--clr-decor-bg);
 }
 
-/* Show menu when toggled */
-#menu-toggle:checked ~ .menu {
-  max-height: 500px; /* enough to show all links */
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
 }
-
 .hamburger span {
-  transform-origin: center;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #333; /* اللون ثابت */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center; /* عشان دوران الخطوط يكون من المنتصف */
 }
-#menu-toggle:checked + .hamburger span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
+#menu-toggle {
+  display: none;
+}
+/* Media Query for mobile */
+@media (max-width: 768px) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  /* Mobile menu */
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-white);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .menu ul li {
+    border-bottom: 1px solid var(--clr-border-light);
+    padding: var(--small-space);
+    border-radius: 0;
+  }
+
+  /* Show menu when toggled */
+  #menu-toggle:checked ~ .menu {
+    max-height: 500px;
+  }
+
+  /* Hamburger animation */
+  #menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 }
 
-#menu-toggle:checked + .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-#menu-toggle:checked + .hamburger span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
 /* Hero Section */
 .hero {
   min-height: calc(100svh - 63px);
