@@ -236,7 +236,7 @@ header img {
 
 /* Hero Section */
 .hero {
-  min-height: 100svh;
+  min-height: calc(100svh - 63px);
   display: grid;
   place-content: center;
   place-items: center;
@@ -547,3 +547,4 @@ footer span {
   color: var(--main-color);
   font-weight: 900;
 }
+
