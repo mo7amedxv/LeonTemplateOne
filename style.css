@@ -91,7 +91,7 @@ button {
   --small-space: clamp(1rem, 1.1rem, 1.3rem);
   --small-gap: 1rem;
   --x-small-gap: 0.5rem;
-  --mobile-gap: 1.5rem;
+  --mobile-gap: 3.5rem;
 }
 /* untilities */
 .features-container,
@@ -111,6 +111,13 @@ button {
 .services-content,
 .portfolio-content {
   justify-content: space-around !important;
+}
+
+.feature-card,
+.portfolio-card,
+.about-text,
+.service p {
+  max-width: 320px;
 }
 
 h1 {
@@ -183,10 +190,6 @@ header img {
   background-color: #333;
   border-radius: 2px;
   transition: all 0.3s ease;
-}
-
-#menu-toggle:checked + .hamburger span:nth-child(2) {
-  width: 100%;
 }
 
 /* Menu */
@@ -265,13 +268,12 @@ header img {
 .features {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .feature-card {
   display: grid;
   place-items: center;
-  max-width: 300px;
+
   text-align: center;
 }
 
@@ -360,57 +362,6 @@ header img {
   padding: var(--x-small-gap) 0;
 }
 
-@media (max-width: 768px) {
-  .features,
-  .services-content,
-  .portfolio-content {
-    gap: var(--mobile-gap);
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1150px) {
-  .photo {
-    display: none;
-  }
-  .photo::before {
-    display: none;
-  }
-  .services-content {
-    display: grid;
-    grid-template-areas:
-      "card1 card2"
-      "card3 card4";
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-  }
-}
-@media (max-width: 768px) {
-  .photo img {
-    display: none;
-  }
-  .photo {
-    display: none;
-  }
-  .photo::before {
-    display: none;
-  }
-  .services-content {
-    display: grid;
-    grid-template-areas:
-      "card1" "card2"
-      "card3" "card4";
-    grid-template-columns: repeat(1, 1fr);
-    place-items: center;
-  }
-  .service {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: 350px;
-    place-items: center;
-    text-align: center;
-  }
-}
-
 .services h3,
 .portfolio h3,
 .dark {
@@ -424,9 +375,7 @@ header img {
   align-items: center;
   gap: var(--small-gap);
 }
-.portfolio-card {
-  max-width: 380px;
-}
+
 .portfolio-info {
   padding: var(--small-space);
   background-color: var(--clr-white);
@@ -439,7 +388,6 @@ header img {
 }
 .about-text {
   display: grid;
-  max-width: 600px;
   gap: var(--small-gap);
 }
 .about h3 {
@@ -483,29 +431,7 @@ hr {
   display: inline-block;
   border-color: var(--main-color);
 }
-@media (max-width: 768px) {
-  .about-content {
-    display: grid;
-    grid-template-columns: auto;
-    place-items: center;
-    position: relative;
-    text-align: center;
-  }
-  .about-photo::after,
-  .about-photo::before {
-    display: none;
-  }
 
-  .about-photo {
-    margin-bottom: var(--small-gap);
-  }
-
-  hr {
-    width: 50%;
-    margin: 30px auto;
-    border-color: var(--main-color);
-  }
-}
 /* Contact */
 
 .contact-content {
@@ -527,7 +453,6 @@ hr {
 .links {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .links img {
   width: 10px;
@@ -536,13 +461,10 @@ hr {
 }
 .links-ul {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .links p {
   display: flex;
-  justify-content: center;
   font-size: 0.7rem;
   margin-right: 2px;
 }
@@ -556,4 +478,67 @@ footer {
 footer span {
   color: var(--main-color);
   font-weight: 900;
+}
+/* media */
+@media (max-width: 768px) {
+  .features,
+  .services-content,
+  .portfolio-content {
+    gap: var(--mobile-gap);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1150px) {
+  .photo {
+    display: none;
+  }
+
+  .services-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .photo {
+    display: none;
+  }
+  .photo::before {
+    display: none;
+  }
+  .services-content {
+    display: grid;
+    grid-template-areas:
+      "card1" "card2"
+      "card3" "card4";
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .service {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .about-content {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    position: relative;
+    text-align: center;
+  }
+  .about-photo::after,
+  .about-photo::before {
+    display: none;
+  }
+
+  .about-photo {
+    margin-bottom: var(--small-gap);
+  }
+
+  hr {
+    width: 50%;
+    margin: 30px auto;
+  }
 }
