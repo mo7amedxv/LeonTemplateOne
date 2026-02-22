@@ -389,9 +389,6 @@ header img {
   flex-wrap: wrap;
 }
 .feature-card {
-  display: grid;
-  place-items: center;
-
   text-align: center;
 }
 
