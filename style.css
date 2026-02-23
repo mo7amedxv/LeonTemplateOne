@@ -81,7 +81,7 @@ button {
   --main-duration: 0.5s;
 
   /* Font Sizes */
-  --fs-hero: clamp(2.2rem, 5vw, 3.125rem);
+  --fs-hero: clamp(2.2rem, calc(5vw + 2rem), 3.125rem);
   --fs-section-title: clamp(1.8rem, 4vw, 2.2rem);
   --fs-large: clamp(1.2rem, 1.3rem, 1.4rem);
   --fs-body: clamp(0.9rem, 1.1rem, 1.1rem);
@@ -94,6 +94,7 @@ button {
   --x-small-gap: 0.5rem;
   --mobile-gap: 3.5rem;
 }
+
 /* ========================= */
 /* 🌙 Clean Dark Mode */
 /* ========================= */
@@ -122,6 +123,10 @@ button {
     /* Shadow */
     --shadow-soft: 0 6px 25px rgba(0, 0, 0, 0.6);
     --mobile-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  }
+  input:focus,
+  textarea:focus {
+    color: white !important;
   }
 
   body {
@@ -200,12 +205,11 @@ button {
 .portfolio-content {
   justify-content: space-around !important;
 }
-
-.feature-card,
 .portfolio-card,
+.feature-card,
 .about-text,
 .service p {
-  max-width: 320px;
+  max-width: 400px;
 }
 
 h1 {
@@ -235,7 +239,9 @@ p {
 .about-content p {
   color: var(--clr-text-muted);
 }
-
+.portfolio-card {
+  padding: 0 var(--x-small-gap);
+}
 .services-text p {
   color: var(--clr-text-dark);
 }
@@ -388,7 +394,7 @@ header img {
 }
 
 .hero p {
-  max-width: 220px;
+  max-width: 320px;
   text-align: center;
 }
 
@@ -618,15 +624,6 @@ button[type="submit"]:hover {
   color: var(--clr-white);
 }
 
-.links {
-  display: flex;
-  align-items: center;
-}
-.links img {
-  width: 10px;
-  height: 10px;
-  margin-left: 2px;
-}
 .links-ul {
   display: flex;
 }
@@ -641,10 +638,9 @@ footer {
   background-color: var(--secondary-color);
   color: var(--clr-white);
   text-align: center;
-  padding: var(--small-space);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  place-items: center;
+  grid-template-areas: "icons support" "copyright copyright";
 }
 footer span {
   color: var(--main-color);
@@ -659,6 +655,10 @@ footer span {
   padding: 0 var(--x-small-gap);
 }
 
+input,
+textarea {
+  color: var(--clr-text-muted);
+}
 .support a {
   padding: 0 var(--x-small-gap);
   transition: var(--main-duration);
@@ -762,21 +762,33 @@ form {
     display: grid;
     place-items: center;
     grid-template-areas: "support" "icons" "copyright";
-    gap: var(--small-gap);
+    gap: var(--space-gap);
   }
 
-  .links-ul a {
-    padding: var(--x-small-gap) 0;
-  }
-  .links-ul {
-    grid-area: icons;
-  }
   footer p {
     grid-area: copyright;
+    font-size: 1rem;
   }
   .support {
     grid-area: support;
     display: grid;
-    gap: var(--x-small-gap);
+    gap: var(--space-gap);
+    padding: var(--space-gap) 0 0 0;
   }
+}
+.support {
+  grid-area: support;
+}
+footer p {
+  grid-area: copyright;
+  width: 100%;
+  border-top: 1px solid var(--clr-border-light);
+  padding: var(--space-gap);
+}
+.links-ul {
+  grid-area: icons;
+  padding: var(--space-gap);
+}
+footer hr {
+  width: 100%;
 }
