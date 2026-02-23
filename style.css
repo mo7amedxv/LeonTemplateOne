@@ -677,6 +677,143 @@ textarea {
   gap: var(--space-gap);
 }
 
+.photo-card img:hover + .eye {
+  display: block !important;
+}
+.project-photo {
+  position: relative; /* مهم لتوسط الـ ::before */
+}
+/* accents + icon */
+.icon {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+.accent {
+  color: #10cab7;
+}
+
+/* portfolio eye overlay (show on hover) */
+.photo-card {
+  position: relative;
+  overflow: hidden;
+}
+.photo-card .eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 48px;
+  height: 48px;
+}
+.photo-card:hover .eye {
+  display: block;
+}
+
+/* containers */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* accessibility helpers */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  background: #fff;
+  padding: 0.5rem;
+  z-index: 9999;
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+} /* accents + icon */
+.icon {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+.accent {
+  color: #10cab7;
+}
+
+/* portfolio eye overlay (show on hover) */
+.photo-card {
+  position: relative;
+  overflow: hidden;
+}
+.photo-card .eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 48px;
+  height: 48px;
+}
+.photo-card:hover .eye {
+  display: block;
+}
+
+/* containers */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* accessibility helpers */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  background: #fff;
+  padding: 0.5rem;
+  z-index: 9999;
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+.project-photo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(90deg, #00ff00, #008000);
+  border-radius: 50%;
+  z-index: 1;
+}
 @media (max-width: 769px) and (min-width: 585px) {
   .direct-contact {
     grid-template-columns: repeat(2, minmax(250px, 1fr));
@@ -770,14 +907,14 @@ form {
     font-size: 1rem;
   }
   .support {
-    grid-area: support;
-    display: grid;
+    display: grid !important;
     gap: var(--space-gap);
     padding: var(--space-gap) 0 0 0;
   }
 }
 .support {
   grid-area: support;
+  display: flex;
 }
 footer p {
   grid-area: copyright;
@@ -791,4 +928,14 @@ footer p {
 }
 footer hr {
   width: 100%;
+}
+.icon {
+  color: var(--main-color);
+}
+.features .icon {
+  font-size: 2rem;
+}
+.photo-card,
+.portfolio-card {
+  position: relative;
 }

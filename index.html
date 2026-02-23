@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="shortcut icon" href="assests/Help/assets/favicon.png"  >
     <script src="https://kit.fontawesome.com/9077c46fc3.js" crossorigin="anonymous"></script>
@@ -45,7 +46,7 @@
      <section class="features-container">
     <div class="features">
       <div class="feature-card">
-        <i class="fa-solid fa-wand-magic-sparkles fa-2xl" style="color: #10cab7;"></i>
+        <i class="fa-solid fa-wand-magic-sparkles fa-2xl icon"></i>
         <h3 class="feature-title">Tell Us Your Idea</h3>
 <p class="feature-description">
   Tell us about your vision and goals, and we will craft a focused digital solution that fits your brand perfectly.
@@ -53,7 +54,7 @@
       </div>
 
       <div class="feature-card">
-     <i class="fa-regular fa-gem fa-2xl" style="color: #10cab7;"></i>
+     <i class="fa-regular fa-gem icon"></i>
         <h3 class="feature-title">We Will Do All The Work</h3>
       <p class="feature-description">
   From planning and strategy to execution and final delivery, our team manages every step with precision to bring your vision to life.
@@ -61,7 +62,7 @@
       </div>
 
       <div class="feature-card">
-       <i class="fa-solid fa-earth-americas fa-2xl" style="color: #10cab7;"></i>
+       <i class="fa-solid fa-earth-americas icon"></i>
         <h3 class="feature-title">Your Product is Worldwide</h3>
         <p class="feature-description">
   We build scalable digital solutions that help your product reach global audiences and perform consistently across all platforms.
@@ -70,7 +71,7 @@
     </div></section>
     <!-- Services -->
      <section class="services-container" id="services">
-    <section class="services" >
+    <div class="services" >
       <div class="special-text">
         <h2>Services</h2>
         <p>Don't be busy, be productive</p>
@@ -79,7 +80,7 @@
       <div class="services-content">
         <div class="service">
           <div class="services-card">
-<i class="fa-solid fa-palette fa-xl" style="color: #10cab7;"></i>
+<i class="fa-solid fa-palette fa-xl icon"></i>
           </div>
           <div class="services-text">
             <h3>Graphic Design</h3>
@@ -91,7 +92,7 @@
 
         <div class="service">
           <div class="services-card">
-          <i class="fa-regular fa-object-group fa-xl" style="color: #10cab7;"></i>
+          <i class="fa-regular fa-object-group fa-xl icon"></i>
           </div>
           <div class="services-text">
             <h3>Web Design</h3>
@@ -103,7 +104,7 @@
 
         <div class="service">
           <div class="services-card">
-<i class="fa-solid fa-gem fa-xl" style="color: #10cab7;"></i>
+<i class="fa-solid fa-gem fa-xl icon"></i>
           </div>
           <div class="services-text">
             <h3>UI & UX</h3>
@@ -115,7 +116,7 @@
 
         <div class="service">
           <div class="services-card">
-         <i class="fa-solid fa-pen-ruler fa-xl" style="color: #10cab7;"></i>
+         <i class="fa-solid fa-pen-ruler fa-xl icon"></i>
           </div>
           <div class="services-text">
             <h3>Web Development</h3>
@@ -128,18 +129,18 @@
           <img src="assests/Help/assets/services.jpg" alt="services image" />
         </div>
           </div>
-    </section>
+
     </section>
     <!-- Portfolio -->
      <section class="portfolio-container" id="portfolio">
-      <section class="portfolio">
+      <div class="portfolio">
             <div class="special-text">
         <h2>Portfolio</h2>
         <p>If you do it right, it will last forever.</p>
       </div>
       <div class="portfolio-content">
         <div class="portfolio-card">
-        <div class="photo-card"><img src="assests/Help/assets/portfolio-1.jpg" alt=""></div>
+        <div class="photo-card"><img src="assests/Help/assets/portfolio-1.jpg" class="project-photo"  alt=""><img src="assests/Help/assets/eye-solid.svg" class="eye" alt=""></div>
           <div class="portfolio-info">
             <h3>Project Here</h3>
             <p>
@@ -147,8 +148,9 @@
 </p>
           </div>
       </div>
-        <div class="portfolio-card">
-        <div class="photo-card"><img src="assests/Help/assets/portfolio-2.jpg" alt=""></div>
+        <div class="portfolio-card" >
+        <div class="photo-card"><img src="assests/Help/assets/portfolio-2.jpg" class="project-photo" alt="">
+        <img src="assests/Help/assets/eye-solid.svg" class="eye" alt=""></div>
           <div class="portfolio-info">
             <h3>Project Here</h3>
          <p>
@@ -156,8 +158,8 @@
 </p>
           </div>
       </div>
-        <div class="portfolio-card">
-        <div class="photo-card"><img src="assests/Help/assets/portfolio-3.jpg" alt=""></div>
+        <div class="portfolio-card" >
+        <div class="photo-card"><img src="assests/Help/assets/portfolio-3.jpg" class="project-photo" alt=""><img src="assests/Help/assets/eye-solid.svg" class="eye" alt=""></div>
           <div class="portfolio-info">
             <h3>Project Here</h3>
           <p>
@@ -166,11 +168,11 @@
           </div>
       </div>
       
-      </section>
+    </div>
      </section>
      <!-- about --> 
       <section class="about-container" id="about">
-        <section class="about" >
+        <div class="about" >
             <div class="special-text">
         <h2>About</h2>
         <p>Less is more work</p>
@@ -181,18 +183,19 @@
         </div>
         <div class="about-text">
       <h3>
-  We are a creative team dedicated to building thoughtful digital products that connect brands with real people, focusing on clarity, performance, and meaningful user experiences that truly make an impact.
+  We are a creative team dedicated to building thoughtful
+   digital products that connect brands with real people, focusing on clarity, performance, and meaningful user experiences that truly make an impact.
 </h3>
 <hr>
     <p>
   Our approach blends strategy, innovation, and technology to create visually engaging, user-friendly solutions that help brands grow and compete effectively in today’s digital landscape.
 </p>
-      </div></div>
-        </section>
+      </div>
+    </div>
       </section>
       <!-- contact -->
       <section class="contact-container" id="contact">
-        <section class="contact" >
+        <div class="contact" >
         <div class="special-text">
         <h2>Contact</h2>
         <p>We are born to create</p>
@@ -204,18 +207,18 @@
   method="POST"
 >
           <input type="hidden" name="c7965788-af9c-4705-a116-2cc7568502ab" value="c7965788-af9c-4705-a116-2cc7568502ab">
-  <input type="text" placeholder="Your Name" required />
-  <input type="tel" placeholder="Your Phone" />
-  <input type="email" placeholder="Your Email" required />  
-  <textarea placeholder="Your Message" required maxlength="600"></textarea>
+  <input name="name" type="text" placeholder="Your Name" required />
+  <input name="phone" type="tel" placeholder="Your Phone" />
+  <input name="email" type="email" placeholder="Your Email" required />  
+  <textarea name="message" placeholder="Your Message" required maxlength="600"></textarea>
   <button type="submit">Send Message</button>
 </form>
 
 
-      </div>
+
         <div class="direct-contact">
       <div class="contact-card">
-        <i class="fa-solid fa-location-dot fa-xl" style="color: #10cab7;"></i>
+        <i class="fa-solid fa-location-dot fa-xl icon"></i>
         <div class="contact-text">
         <h3>Address</h3>
         <p>Mada Center 8th floor, 379 Hudson St, Egypt, NY 1001B Saudi Arabia</p>
@@ -223,7 +226,7 @@
 
       </div>
             <div class="contact-card">
-<i class="fa-solid fa-phone fa-xl" style="color: #10cab7;"></i>
+<i class="fa-solid fa-phone fa-xl icon"></i>
         <div class="contact-text">
         <h3>Lets Talk</h3>
         <p>+20 123 456 7890</p>
@@ -231,7 +234,7 @@
 
       </div>
                   <div class="contact-card">
-<i class="fa-solid fa-fax fa-xl" style="color: #10cab7;"></i>
+<i class="fa-solid fa-fax fa-xl icon"></i>
         <div class="contact-text">
         <h3>Fax</h3>
         <p>+10 123 456 7890</p>
@@ -240,7 +243,7 @@
       </div>
             <div class="contact-card">
     
-<i class="fa-solid fa-envelope fa-xl" style="color: #10cab7;"></i>
+<i class="fa-solid fa-envelope fa-xl icon" ></i>
         <div class="contact-text">
         <h3>General Support</h3>
         <p>leoncontact@gmail.com</p>
@@ -248,18 +251,20 @@
 
       </div>
      </div> 
-        </section>
+    </div>
       </section>
       <footer>
        
         <ul class="links-ul">
-        <li><a href="https://www.youtube.com/@mohamedxv1" target="_blank" title="Youtube"><i class="fa-brands fa-youtube fa-xl" style="color: #10cab7;"></i></a></li>
-        <li><a href="https://www.facebook.com/mohamed.hatem.602328/" target="_blank" title="Facebook" ><i class="fa-brands fa-facebook fa-xl" style="color: #10cab7;"></i></a></li>
-        <li><a target="_blank" title="Github" href="https://github.com/mo7amedxv"><i class="fa-brands fa-github fa-xl" style="color: #10cab7;"></i></a></li>
+        <li><a href="https://www.youtube.com/@mohamedxv1" target="_blank" title="Youtube"><i class="fa-brands fa-youtube fa-xl icon"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/mohamed.hatem.602328/" target="_blank" title="Facebook" ><i class="fa-brands fa-facebook fa-xl icon"></i></a></li>
+        <li><a target="_blank" title="Github" href="https://github.com/mo7amedxv"><i class="fa-brands fa-github fa-xl icon"></i></a></li>
       </ul>
       <ul class="footer-links support">
-      <a class="link"href="privacy.html">Privacy</a>
-  <a class="link"href="terms.html">Terms</a>
-  <a class="link"href="credits.html">Credits</a></ul><p>© 2026 <span>Leon</span> All Right Reserved</p></footer>
+        <li>
+      <a class="link"href="privacy.html">Privacy</a></li>
+       <li><a class="link"href="terms.html">Terms</a></li>
+  <li><a class="link"href="credits.html">Credits</a></li></ul><p>© 2026 <span>Leon</span> All Right Reserved</p></footer>
   </body>
 </html>
