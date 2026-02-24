@@ -11,13 +11,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leon | Template One</title>
   </head>
   <body>
     <header>
+      <div class="container">
       <img src="assests/Help/assets/logo.png" alt="logo" />
 
       <input type="checkbox" id="menu-toggle" />
@@ -35,6 +35,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      </div>
     </header>
 
     <!-- hero section -->
@@ -44,6 +45,7 @@
     </section>
     <!-- feature section -->
      <section class="features-container">
+      <div class="container">
     <div class="features">
       <div class="feature-card">
         <i class="fa-solid fa-wand-magic-sparkles fa-2xl icon"></i>
@@ -68,9 +70,10 @@
   We build scalable digital solutions that help your product reach global audiences and perform consistently across all platforms.
 </p>
       </div>
-    </div></section>
+    </div></div></section>
     <!-- Services -->
      <section class="services-container" id="services">
+      <div class="container">
     <div class="services" >
       <div class="special-text">
         <h2>Services</h2>
@@ -129,10 +132,11 @@
           <img src="assests/Help/assets/services.jpg" alt="services image" />
         </div>
           </div>
-
+</div>
     </section>
     <!-- Portfolio -->
      <section class="portfolio-container" id="portfolio">
+      <div class="container">
       <div class="portfolio">
             <div class="special-text">
         <h2>Portfolio</h2>
@@ -168,10 +172,11 @@
           </div>
       </div>
       
-    </div>
+    </div></div>
      </section>
      <!-- about --> 
       <section class="about-container" id="about">
+        <div class="container">
         <div class="about" >
             <div class="special-text">
         <h2>About</h2>
@@ -191,10 +196,11 @@
   Our approach blends strategy, innovation, and technology to create visually engaging, user-friendly solutions that help brands grow and compete effectively in today’s digital landscape.
 </p>
       </div>
-    </div>
+    </div></div>
       </section>
       <!-- contact -->
       <section class="contact-container" id="contact">
+        <div class="container">
         <div class="contact" >
         <div class="special-text">
         <h2>Contact</h2>
@@ -210,7 +216,10 @@
   <input name="name" type="text" placeholder="Your Name" required />
   <input name="phone" type="tel" placeholder="Your Phone" />
   <input name="email" type="email" placeholder="Your Email" required />  
-  <textarea name="message" placeholder="Your Message" required maxlength="600"></textarea>
+  <textarea name="message" placeholder="Your Message" required maxlength="600"   id="message" ></textarea>
+  <p class="char-counter">
+  <span id="char-count">0</span> / 600
+</p>
   <button type="submit">Send Message</button>
 </form>
 
@@ -251,10 +260,10 @@
 
       </div>
      </div> 
-    </div>
+    </div></div>
       </section>
       <footer>
-       
+       <div class="container">
         <ul class="links-ul">
         <li><a href="https://www.youtube.com/@mohamedxv1" target="_blank" title="Youtube"><i class="fa-brands fa-youtube fa-xl icon"></i>
         </a></li>
@@ -266,6 +275,15 @@
       <a class="link"href="privacy.html">Privacy</a></li>
        <li><a class="link"href="terms.html">Terms</a></li>
   <li><a class="link"href="credits.html">Credits</a></li></ul>
-  <p>© 2026 <span>Leon</span> All Right Reserved</p></footer>
+  <p>© 2026 <span>Leon</span> All Right Reserved</p></div></footer>
+  <script>
+  const textarea = document.getElementById("message");
+  const counter = document.getElementById("char-count");
+  const maxLength = textarea.getAttribute("maxlength");
+
+  textarea.addEventListener("input", () => {
+    counter.textContent = textarea.value.length;
+  });
+</script>
   </body>
 </html>
