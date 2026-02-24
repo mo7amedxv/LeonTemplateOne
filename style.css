@@ -41,25 +41,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Brand */
-    --main-color: #18e6d1; /* slightly brighter teal for dark bg */
-
-    /* Background (inverted / dark) */
-    --clr-white: #0b0b0d; /* site background (dark) */
-    --clr-section-bg: #0f0f11; /* sections slightly lighter than page bg */
-    --clr-hover-bg: #161616; /* hover / inputs */
-    --clr-decor-bg: #222426; /* decorative shapes, faint text behind */
-    --clr-card-bg: #131417; /* cards and panels */
-
-    /* Text (light on dark) */
-    --clr-text-dark: #eef4f4; /* main text */
-    --clr-text-muted: #b6c0c0; /* muted text */
+    --main-color: #18e6d1;
+    --clr-white: #0b0b0d;
+    --clr-section-bg: #0f0f11;
+    --clr-hover-bg: #161616;
+    --clr-decor-bg: #222426;
+    --clr-card-bg: #131417;
+    --clr-text-dark: #eef4f4;
+    --clr-text-muted: #b6c0c0;
     --clr-text-light-muted: #9aa3a3;
-
-    /* Border */
-    --clr-border-light: #2a2a2a; /* subtle dark border */
-
-    /* Shadow */
+    --clr-border-light: #2a2a2a;
     --shadow-soft: 0 6px 25px rgba(0, 0, 0, 0.6);
     --mobile-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
   }
@@ -73,20 +64,23 @@
     box-shadow: none;
   }
 
+  .hero p {
+    color: var(--clr-card-bg);
+  }
+
   .menu {
     background-color: var(--clr-section-bg);
   }
 
   footer {
     color: #cacaca !important;
-    background-color: #070707 !important; /* deep footer for contrast */
+    background-color: #070707 !important;
   }
 
   footer a {
     color: #cacaca !important;
   }
 
-  /* form / interactive defaults (use tokens) */
   input,
   textarea,
   button {
@@ -106,30 +100,24 @@
 }
 
 /* untilities */
-.features-container,
-.portfolio-container,
-.contact-container {
+.features,
+.portfolio,
+.contact {
   background-color: var(--clr-section-bg);
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-}
-.features-container,
-.services-container,
-.portfolio-container,
-.about-container,
-.contact-container {
   padding: var(--space-section) 0;
 }
 
-.features,
+.features .container,
 .portfolio-content {
   justify-content: space-around;
 }
 .portfolio-card,
-.feature-card,
+.features .card,
 .about-text,
 .service p {
   max-width: 400px;
@@ -157,7 +145,7 @@ p {
   font-size: var(--fs-body);
 }
 
-.feature-card p,
+.features .card p,
 .portfolio-card p,
 .about-content p {
   color: var(--clr-text-muted);
@@ -203,13 +191,14 @@ p {
 header {
   background-color: var(--clr-white);
   position: relative;
-  padding: var(--small-space);
+
   box-shadow: var(--shadow-soft);
 }
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: var(--small-space);
 }
 /* Logo */
 header img {
@@ -290,31 +279,31 @@ header img {
 }
 
 /* feature section */
-.features {
+.features .container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-.feature-card {
+.features .card {
   text-align: center;
   padding: var(--space-gap) 0;
 }
 
 /* services */
 
-.special-text {
+.section-header {
   margin-bottom: var(--space-section);
   grid-column: 1 / -1;
 }
 
-.special-text h2 {
+.section-header h2 {
   color: var(--clr-decor-bg);
   letter-spacing: -3px;
   line-height: 0.2;
   text-align: center;
 }
 
-.special-text p {
+.section-header p {
   font-weight: 300;
   text-align: center;
   color: var(--clr-text-light-muted);
@@ -456,12 +445,12 @@ hr {
 
 /* Contact */
 
-.contact {
+.contact .container {
   display: grid;
   place-items: center;
   grid-template-columns: auto auto;
-  padding: var(--space-gap);
   gap: var(--space-gap);
+  padding: var(--space-section);
 }
 
 .contact-content {
@@ -537,6 +526,7 @@ footer .container {
   display: grid;
   place-items: center;
   grid-template-areas: "icons support" "copyright copyright";
+  padding: var(--x-small-gap);
 }
 
 footer span {
@@ -571,10 +561,9 @@ footer span {
 }
 
 .project-photo {
-  position: relative; /* مهم لتوسط الـ ::before */
+  position: relative;
 }
 
-/* portfolio eye overlay (show on hover) */
 .photo-card {
   position: relative;
   overflow: hidden;
@@ -657,7 +646,7 @@ footer hr {
   }
 }
 @media (max-width: 768px) {
-  .features,
+  .features .container,
   .services-content,
   .portfolio-content {
     gap: var(--mobile-gap);
@@ -700,7 +689,7 @@ footer hr {
     width: 50%;
     margin: 30px auto;
   }
-  footer {
+  footer .container {
     grid-template-areas: "support" "icons" "copyright";
     gap: var(--space-gap);
   }
@@ -731,7 +720,7 @@ footer hr {
     cursor: pointer;
     z-index: 2;
   }
-  .contact {
+  .contact .container {
     grid-template-columns: 1fr;
   }
   /* Mobile menu */

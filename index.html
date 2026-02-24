@@ -44,10 +44,9 @@
       <p>We are Leon - Super Creative & Minimal Agency Web Template</p>
     </section>
     <!-- feature section -->
-     <section class="features-container">
+     <section class="features">
       <div class="container">
-    <div class="features">
-      <div class="feature-card">
+      <div class="card">
         <i class="fa-solid fa-wand-magic-sparkles fa-2xl icon"></i>
         <h3 class="feature-title">Tell Us Your Idea</h3>
 <p class="feature-description">
@@ -55,7 +54,7 @@
 </p>
       </div>
 
-      <div class="feature-card">
+      <div class="card">
      <i class="fa-regular fa-gem icon"></i>
         <h3 class="feature-title">We Will Do All The Work</h3>
       <p class="feature-description">
@@ -63,19 +62,18 @@
 </p>
       </div>
 
-      <div class="feature-card">
+      <div class="card">
        <i class="fa-solid fa-earth-americas icon"></i>
         <h3 class="feature-title">Your Product is Worldwide</h3>
         <p class="feature-description">
   We build scalable digital solutions that help your product reach global audiences and perform consistently across all platforms.
 </p>
-      </div>
     </div></div></section>
     <!-- Services -->
-     <section class="services-container" id="services">
+     <section class="services" id="services">
       <div class="container">
-    <div class="services" >
-      <div class="special-text">
+
+      <div class="section-header">
         <h2>Services</h2>
         <p>Don't be busy, be productive</p>
       </div>
@@ -131,14 +129,14 @@
         <div class="photo">
           <img src="assests/Help/assets/services.jpg" alt="services image" />
         </div>
-          </div>
+
 </div>
     </section>
     <!-- Portfolio -->
-     <section class="portfolio-container" id="portfolio">
+     <section class="portfolio" id="portfolio">
       <div class="container">
-      <div class="portfolio">
-            <div class="special-text">
+
+            <div class="section-header">
         <h2>Portfolio</h2>
         <p>If you do it right, it will last forever.</p>
       </div>
@@ -170,15 +168,14 @@
   Every project showcases our dedication to detail, smart execution, and delivering measurable results that exceed client expectations.
 </p>
           </div>
-      </div>
       
     </div></div>
      </section>
      <!-- about --> 
-      <section class="about-container" id="about">
+      <section class="about" id="about">
         <div class="container">
-        <div class="about" >
-            <div class="special-text">
+
+            <div class="section-header">
         <h2>About</h2>
         <p>Less is more work</p>
       </div>
@@ -195,14 +192,14 @@
     <p>
   Our approach blends strategy, innovation, and technology to create visually engaging, user-friendly solutions that help brands grow and compete effectively in today’s digital landscape.
 </p>
-      </div>
+
     </div></div>
       </section>
       <!-- contact -->
-      <section class="contact-container" id="contact">
+      <section class="contact" id="contact">
         <div class="container">
-        <div class="contact" >
-        <div class="special-text">
+
+        <div class="section-header">
         <h2>Contact</h2>
         <p>We are born to create</p>
       </div>  
@@ -217,9 +214,7 @@
   <input name="phone" type="tel" placeholder="Your Phone" />
   <input name="email" type="email" placeholder="Your Email" required />  
   <textarea name="message" placeholder="Your Message" required maxlength="600"   id="message" ></textarea>
-  <p class="char-counter">
-  <span id="char-count">0</span> / 600
-</p>
+
   <button type="submit">Send Message</button>
 </form>
 
@@ -260,7 +255,7 @@
 
       </div>
      </div> 
-    </div></div>
+    </div>
       </section>
       <footer>
        <div class="container">
@@ -276,14 +271,6 @@
        <li><a class="link"href="terms.html">Terms</a></li>
   <li><a class="link"href="credits.html">Credits</a></li></ul>
   <p>© 2026 <span>Leon</span> All Right Reserved</p></div></footer>
-  <script>
-  const textarea = document.getElementById("message");
-  const counter = document.getElementById("char-count");
-  const maxLength = textarea.getAttribute("maxlength");
 
-  textarea.addEventListener("input", () => {
-    counter.textContent = textarea.value.length;
-  });
-</script>
   </body>
 </html>
