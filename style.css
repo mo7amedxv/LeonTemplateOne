@@ -21,9 +21,10 @@
   --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.11);
   --mobile-shadow: 0px 20px 20px 0px #00000015;
   --main-duration: 0.5s;
+  --secondry-duration: 100ms;
 
   /* Font Sizes */
-  --fs-hero: clamp(2.2rem, calc(5vw + 2rem), 3.125rem);
+  --fs-hero: clamp(2.2rem, calc(3vw + 2rem), 3rem);
   --fs-section-title: clamp(1.8rem, calc(5vw + 2rem), 3rem);
   --fs-large: clamp(1.2rem, 1.3rem, 1.4rem);
   --fs-body: clamp(0.9rem, 1.1rem, 1.1rem);
@@ -92,11 +93,6 @@
   .photo::before {
     background-color: var(--clr-decor-bg);
   }
-
-  a:hover,
-  .support a:hover {
-    color: var(--main-color) !important;
-  }
 }
 
 /* untilities */
@@ -150,9 +146,7 @@ p {
 .about-content p {
   color: var(--clr-text-muted);
 }
-.portfolio-card {
-  padding: 0 var(--x-small-gap);
-}
+
 .services-text p {
   color: var(--clr-text-dark);
 }
@@ -274,7 +268,6 @@ header img {
 }
 
 .hero p {
-  max-width: 320px;
   text-align: center;
 }
 
@@ -380,6 +373,18 @@ header img {
 }
 
 /* portfolio */
+
+.portfolio-card {
+  position: relative;
+  transition: var(--main-duration);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.portfolio-card:hover {
+  transform: rotate(2deg) translateY(-6px);
+}
 .portfolio-content {
   display: flex;
   flex-wrap: wrap;
@@ -390,11 +395,15 @@ header img {
 .portfolio-info {
   padding: var(--small-space);
   background-color: var(--clr-white);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .photo-card {
   position: relative;
   overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 .photo-card::before {
   content: "";
@@ -624,10 +633,6 @@ footer hr {
   font-size: 2rem;
 }
 
-.portfolio-card {
-  position: relative;
-}
-
 .contact-card {
   padding: var(--small-gap);
   display: flex;
@@ -643,6 +648,11 @@ footer hr {
   color: var(--clr-text-light-muted);
 }
 
+footer i:hover {
+  font-size: 1.5rem;
+  transition: var(--secondary-duration);
+}
+
 /* media */
 
 @media (min-width: 769px) and (max-width: 1150px) {
@@ -654,6 +664,10 @@ footer hr {
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
   }
+}
+a:hover,
+.support a:hover {
+  color: var(--main-color) !important;
 }
 @media (max-width: 768px) {
   .features .container,
