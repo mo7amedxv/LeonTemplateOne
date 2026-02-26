@@ -495,7 +495,7 @@ header img {
 }
 
 .project-photo:hover {
-  transform: scale(1, 1);
+  transform: scale(1. 1);
 }
 
 /* about */
@@ -847,3 +847,4 @@ a:hover,
     transform: translateY(-10px) rotate(-45deg);
   }
 }
+
