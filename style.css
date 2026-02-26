@@ -97,21 +97,21 @@
 
 /* animation */
 @keyframes appear {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translatey(40px);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translatey(0);
   }
 }
 
-.features,
-.services,
-.portfolio,
-.about,
-.contact {
+.features .card,
+.portfolio-card,
+.contact-content,
+.service,
+.about-content {
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
@@ -437,7 +437,7 @@ header img {
 }
 
 .portfolio-card:hover {
-  transform: rotate(2deg) translateY(-6px);
+  transform: rotate(1.5deg) translateY(-6px);
 }
 .portfolio-content {
   display: flex;
@@ -494,10 +494,12 @@ header img {
   opacity: 1;
 }
 
-.project-photo:hover {
-  transform: scale(1. 1);
+.photo-card:hover .project-photo {
+  transform: scale(1.2);
 }
-
+.project-photo {
+  transition: var(--main-duration);
+}
 /* about */
 .about-content {
   display: grid;
@@ -847,4 +849,3 @@ a:hover,
     transform: translateY(-10px) rotate(-45deg);
   }
 }
-
