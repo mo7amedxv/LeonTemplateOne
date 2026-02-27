@@ -93,6 +93,9 @@
   .photo::before {
     background-color: var(--clr-decor-bg);
   }
+  .section-header h2 {
+    color: hsl(0, 0%, 100%) !important;
+  }
 }
 
 /* animation */
@@ -438,6 +441,13 @@ header img {
 
 .portfolio-card:hover {
   transform: rotate(1.5deg) translateY(-6px);
+}
+
+.portfolio-card:first-child:hover {
+  transform: rotate(-1.5deg) translateY(-6px);
+}
+.portfolio-card:nth-child(2):hover {
+  transform: translateY(-6px) scale(1.05);
 }
 .portfolio-content {
   display: flex;
