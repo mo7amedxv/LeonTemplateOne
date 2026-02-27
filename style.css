@@ -440,14 +440,11 @@ header img {
 }
 
 .portfolio-card:hover {
-  transform: rotate(1.5deg) translateY(-6px);
+  transform: rotate(1.5deg) translateY(-6px) scale(1.05);
 }
 
-.portfolio-card:first-child:hover {
-  transform: rotate(-1.5deg) translateY(-6px);
-}
 .portfolio-card:nth-child(2):hover {
-  transform: translateY(-6px) scale(1.05);
+  transform: rotate(-1.5deg) translateY(-6px) scale(1.05);
 }
 .portfolio-content {
   display: flex;
